@@ -1,6 +1,8 @@
 from colorsys import rgb_to_hls, hls_to_rgb
 import openpyxl
 
+#Here Oliver, I added something to your code!
+
 #https://bitbucket.org/openpyxl/openpyxl/issues/987/add-utility-functions-for-colors-to-help
  
 RGBMAX = 0xff  # Corresponds to 255
