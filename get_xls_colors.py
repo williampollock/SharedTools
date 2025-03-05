@@ -1,5 +1,6 @@
 from colorsys import rgb_to_hls, hls_to_rgb
 import openpyxl
+from openpyxl.utils import column_index_from_string
 
 #Here Oliver, I added something to your code!
 
@@ -47,14 +48,21 @@ def get_theme_colors(wb):
     firstColorScheme = colorSchemes[0]
  
     colors = []
- 
     for c in ['lt1', 'dk1', 'lt2', 'dk2', 'accent1', 'accent2', 'accent3', 'accent4', 'accent5', 'accent6']:
         accent = firstColorScheme.find(QName(xlmns, c).text)
+        if accent is not None and len(accent) > 0:
+            child = accent[0]
+            if 'window' in child.attrib['val']:
+                colors.append(child.attrib['lastClr'])
+            else:
+                colors.append(child.attrib['val'])
+    # for c in ['lt1', 'dk1', 'lt2', 'dk2', 'accent1', 'accent2', 'accent3', 'accent4', 'accent5', 'accent6']:
+    #     accent = firstColorScheme.find(QName(xlmns, c).text)
  
-        if 'window' in accent.getchildren()[0].attrib['val']:
-            colors.append(accent.getchildren()[0].attrib['lastClr'])
-        else:
-            colors.append(accent.getchildren()[0].attrib['val'])
+    #     if 'window' in accent.getchildren()[0].attrib['val']:
+    #         colors.append(accent.getchildren()[0].attrib['lastClr'])
+    #     else:
+    #         colors.append(accent.getchildren()[0].attrib['val'])
  
     return colors
  
@@ -108,9 +116,6 @@ def convert_hex(hex_code):
 # Example usage:
 # matplotlib_compatible_hex = convert_hex('FFDFF4FD')
 # This will output '#DFF4FDFF'
-
-
-
 
 def get_cell_colors(workbook, sheet_name, min_row, min_col, max_row=None, max_col=None):
     '''Extracts cell shading colors from a range of cells in an Excel worksheet.
@@ -174,3 +179,48 @@ def get_cell_colors(workbook, sheet_name, min_row, min_col, max_row=None, max_co
 # workbook = openpyxl.load_workbook(path_to_xlsx)
 # #get the colors of the cells in column D starting at row 2 and ending at the last row:
 # colors, c_dict = get_cell_colors(workbook, name_of_sheet, 2, 4, max_col=4)
+
+
+def get_value_color_map(workbook, sheet_name, min_row, min_col, max_row=None, max_col=None):
+    """
+    Uses get_cell_colors to build a dictionary where each key is a cell's value
+    and each value is the cell's color in hex format.
+
+    Parameters
+    ----------
+    workbook : openpyxl.Workbook
+        The workbook containing the worksheet to extract colors from.
+    sheet_name : str
+        The name of the worksheet to extract colors from.
+    min_row : int
+        The first row to extract colors from.
+    min_col : int
+        The first column to extract colors from.
+    max_row : int, optional
+        The last row to extract colors from. If None, the last row in the worksheet is used.
+    max_col : int, optional 
+        The last column to extract colors from. If None, the last column in the worksheet is used.
+
+    Returns
+    -------
+    dict
+        A dictionary where each key is the cell value and each value is the color (hex code).
+        If multiple cells share the same value, only the last color encountered is stored.
+    """
+
+    # Reuse the existing function to get the list of colors and dict of (column_letter, row) -> color
+    colors, c_dict = get_cell_colors(workbook, sheet_name, min_row, min_col, max_row, max_col)
+    
+    # Retrieve the sheet so we can look up the actual cell values
+    sheet = workbook[sheet_name]
+    
+    # Build a dictionary that maps cell values to color hex codes
+    value_color_map = {}
+    for (col_letter, row), color_hex in c_dict.items():
+        col_index = column_index_from_string(col_letter)
+        cell_value = sheet.cell(row=row, column=col_index).value
+        
+        # Store/overwrite the color keyed by the cell's value
+        value_color_map[cell_value] = color_hex
+
+    return value_color_map
