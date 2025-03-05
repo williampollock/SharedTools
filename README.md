@@ -5,7 +5,7 @@ This repository provides a collection of helpful python functions that folks can
 ## Prerequisites
 
 - **Git:** Download and install from [git-scm.com](https://git-scm.com/).
-- **Python:** Download and install from [Shanwilpy Installation Guide]([https://www.python.org/](https://swi.blob.core.windows.net/shanwilpydocs/html/install.html)).
+- **Python:** Download and install from [Shanwilpy Installation Guide](https://swi.blob.core.windows.net/shanwilpydocs/html/install.html).
 - **Visual Studio Code:** Download and install from [code.visualstudio.com](https://code.visualstudio.com/).
 - **VS Code Extensions:**  
   - Python (provided by Microsoft)  
