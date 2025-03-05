@@ -22,11 +22,14 @@ This repository provides a collection of tools for working with Excel spreadshee
 
 ### 1. Clone the Repository
 
-1. Open Visual Studio Code.
-2. Open the integrated terminal by selecting View > Terminal from the menu.
-3. Run the following command:
+1. Find a folder on your PC that you want the local repository to reside.  Preferably a central location
+   where you keep other python repositories.
+3. Open VS Code.  If you set up VS Code properly, then you should be able to right click in
+   the folder above and select "Open with Code".
+5. Open the integrated terminal in VS Code by selecting View > Terminal from the menu.
+6. Run the following command in the terminal:
    `git clone https://github.com/ohoopes/SharedTools.git`
-4. Open the cloned SharedTools folder in VS Code.
+7. Open the cloned SharedTools folder in VS Code.
 
 ### 2. Create and Activate the Virtual Environment via VS Code integrated terminal
 1. In the VS Code integrated terminal, navigate to the repository root.
