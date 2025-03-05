@@ -1,6 +1,6 @@
 # SharedTools Repository
 
-This repository provides a collection of tools for working with Excel spreadsheets in Python. In particular, the `get_xls_colors.py` module contains functions to extract cell colors from Excel workbooks using the `openpyxl` library. This README explains how to set up the project on Windows using Visual Studio Code and run a Jupyter Notebook demo that retrieves cell colors from the range D4:D29 in the "Complex Table" sheet of the example spreadsheet (`Table 1 ESUs.xlsx`).
+This repository provides a collection of helpful python functions that folks can contribute to for training purposes.  Many of the current functions are focused on working with Excel spreadsheets in Python. In particular, the `get_xls_colors.py` module contains functions to extract cell colors from Excel workbooks using the `openpyxl` library. This README explains how to set up the project on Windows using Visual Studio Code and run a Jupyter Notebook demo that retrieves cell colors from the range D4:D29 in the "Complex Table" sheet of the example spreadsheet (`Table 1 ESUs.xlsx`).
 
 ## Prerequisites
 
