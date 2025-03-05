@@ -28,20 +28,26 @@ This repository provides a collection of helpful python functions that folks can
    the folder above and select "Open with Code".
 4. Open the integrated terminal in VS Code by selecting View > Terminal from the menu.
 5. Run the following command in the integrated terminal:
+   
    `git clone https://github.com/ohoopes/SharedTools.git`
-6. Open the cloned SharedTools folder in VS Code.
+7. Open the cloned SharedTools folder in VS Code.
 
 ### 2. Create and Activate the Virtual Environment via VS Code integrated terminal
 1. In the VS Code integrated terminal, navigate to the repository root.
 2. Create a virtual environment named shared_tools_env
-    `python -m venv shared_tools_env`
-3. Activate the virtual environment:
-    `shared_tools_env\Scripts\activate`
-4. Set your global username and email so you can contribute to this repository via git.  Open the integrated terminal in VS Code by selecting View > Terminal from the menu.
+
+   `python -m venv shared_tools_env`
+4. Activate the virtual environment:
+
+   `shared_tools_env\Scripts\activate`
+6. Set your global username and email so you can contribute to this repository via git.  Open the integrated terminal in VS Code by selecting View > Terminal from the menu.
+
    `git config --global user.name "Your Name"`
+
    `git config --global user.email "your.email@example.com"`
    Typically, you use your full name for user.name. Git doesn't enforce a specific format — it simply records what you set as your user name in the commit metadata. If you'd prefer to use your GitHub username, that's fine too.
-5. To verify, run:
+8. To verify, run:
+
    `git config --global --list`
 
 ### 3. Install Dependencies
