@@ -46,7 +46,7 @@ This repository provides a collection of tools for working with Excel spreadshee
 2. Jupyter Support:
     If prompted, install the Jupyter extension to enable notebook support in VS Code.
 
-### 5.Run the Jupyter Notebook Demo
+### 5. Run the Jupyter Notebook Demo
 1. open demo_shared_tools.ipynb from SharedTools directory via VS Code file explorer
 2. Run the Notebook Cell:
 Click the “Run” button at the top of the cell or press Shift + Enter to execute the code. The output will display the list of colors and a dictionary mapping each cell (e.g., ('D', 4)) to its corresponding color.
