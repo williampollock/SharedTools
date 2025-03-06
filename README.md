@@ -4,12 +4,14 @@ This repository provides a collection of helpful python functions that folks can
 
 ## Prerequisites
 
-- **Git:** Download and install from [git-scm.com](https://git-scm.com/).
+- **Git:** Download and install from [git-scm.com](https://git-scm.com/). You can also install
+  git directly from within VS Code.  THe first time you open the package control tab on the left side of the VS Code window, you should see a big blue button that says: `Download Git for Windows`.  Click that button and follow the installation instructions.
 - **Python:** Download and install from [Shanwilpy Installation Guide](https://swi.blob.core.windows.net/shanwilpydocs/html/install.html).
 - **Visual Studio Code:** Download and install from [code.visualstudio.com](https://code.visualstudio.com/).
 - **VS Code Extensions:**  
   - Python (provided by Microsoft)  
   - Jupyter (if not already installed)
+  - Ruff (recommended linter)
 
 ## Repository Contents
 
@@ -34,7 +36,11 @@ This repository provides a collection of helpful python functions that folks can
 
 ### 2. Create and Activate the Virtual Environment via VS Code integrated terminal
 1. In the VS Code integrated terminal, navigate to the repository root.
-2. Create a virtual environment named shared_tools_env
+2. Create a virtual environment named `shared_tools_env`.  It is good practice
+   to create seperate virtual environments for each workflow or group of similar
+   workflows, mainly because they help keep dependencies separate for different 
+   projects. This also prevents conflicts where one project requires a package 
+   version that another project is incompatible with. 
 
    `python -m venv shared_tools_env`
 4. Activate the virtual environment:
