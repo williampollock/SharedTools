@@ -8,6 +8,12 @@ This repository provides a collection of helpful python functions that folks can
   git directly from within VS Code.  THe first time you open the package control tab on the left side of the VS Code window, you should see a big blue button that says: `Download Git for Windows`.  Click that button and follow the installation instructions.
 - **Python:** Download and install from [Shanwilpy Installation Guide](https://swi.blob.core.windows.net/shanwilpydocs/html/install.html).
 - **Visual Studio Code:** Download and install from [code.visualstudio.com](https://code.visualstudio.com/).
+Important: During the installation of VS Code, ensure that you check the following options:
+
+- Add "Open with Code" action to Windows Explorer file context menu
+
+- Add "Open with Code" action to Windows Explorer directory context menu
+
 - **VS Code Extensions:**  
   - Python (provided by Microsoft)  
   - Jupyter (if not already installed)
