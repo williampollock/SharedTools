@@ -18,7 +18,7 @@ This repository provides a collection of helpful python functions that folks can
 - `get_xls_colors.py` – Python module with functions to retrieve cell colors.
 - `Table 1 ESUs.xlsx` – Example Excel spreadsheet (should be located in the repository root).
 - `requirements.txt` – Lists the project dependencies.
-- `README.md` – This file.
+- `README.md` – This file!
 
 ## Setup Instructions
 
