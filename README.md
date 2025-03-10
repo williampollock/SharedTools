@@ -25,20 +25,22 @@ Important: During the installation of VS Code, ensure that you check the followi
 - `Table 1 ESUs.xlsx` – Example Excel spreadsheet (should be located in the repository root).
 - `requirements.txt` – Lists the project dependencies.
 - `README.md` – This file!
+- `.gitignore` - this is a file that tells git which files NOT to manage.  The virtual environment is included here.
 
 ## Setup Instructions
 
 ### 1. Clone the Repository
 
 1. Find a folder on your PC that you want the local repository to reside.  Preferably a central location
-   where you keep other python repositories.
+   where you keep other python repositories.  The folder should have no contents.
 3. Open VS Code.  If you set up VS Code properly, then you should be able to right click in
    the folder above and select "Open with Code".
 4. Open the integrated terminal in VS Code by selecting View > Terminal from the menu.
 5. Run the following command in the integrated terminal:
    
-   `git clone https://github.com/ohoopes/SharedTools.git`
-7. Open the cloned SharedTools folder in VS Code.
+   `git clone https://github.com/ohoopes/SharedTools.git .`
+   The '.' at the end ensures the repository's contents are cloned directly into the current.
+6. Open the cloned SharedTools folder in VS Code.
 
 ### 2. Create and Activate the Virtual Environment via VS Code integrated terminal
 1. In the VS Code integrated terminal, navigate to the repository root.
@@ -52,28 +54,27 @@ Important: During the installation of VS Code, ensure that you check the followi
 4. Activate the virtual environment:
 
    `shared_tools_env\Scripts\activate`
-6. Set your global username and email so you can contribute to this repository via git.  Open the integrated terminal in VS Code by selecting View > Terminal from the menu.
+5. If you haven't already done this, set your global username and email so you can contribute to this repository via git.  Open the integrated terminal in VS Code by selecting View > Terminal from the menu.
 
    `git config --global user.name "Your Name"`
 
    `git config --global user.email "your.email@example.com"`
    Typically, you use your full name for user.name. Git doesn't enforce a specific format — it simply records what you set as your user name in the commit metadata. If you'd prefer to use your GitHub username, that's fine too.
-8. To verify, run:
+6. To verify, run:
 
    `git config --global --list`
+7. With the virtual environment activated, install the dependencies by running:
+   
+    `pip install -r requirements.txt`
 
-### 3. Install Dependencies
-1. With the virtual environment activated, install the dependencies by running:
-    pip install -r requirements.txt
-
-### 4. Configure Visual Studio Code
+### 3. Configure Visual Studio Code
 1. Select the Python Interpreter:
     - Press+Shift+P to open the Command Palette.
     - Type `Python: Select Interpreter` and choose the interpreter from the shared_tools_env virtual environment.
 2. Jupyter Support:
     If prompted, install the Jupyter extension to enable notebook support in VS Code.
 
-### 5. Run the Jupyter Notebook Demo
+### 4. Run the Jupyter Notebook Demo
 1. open demo_shared_tools.ipynb from SharedTools directory via VS Code file explorer
 2. Run the Notebook Cell:
 Click the “Run” button at the top of the cell or press Shift + Enter to execute the code. The output will display the list of colors and a dictionary mapping each cell (e.g., ('D', 4)) to its corresponding color.
