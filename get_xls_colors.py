@@ -258,4 +258,4 @@ def plot_colored_boxes(value_color_map, cols=4, box_size=(2, 1), figname=None):
     if figname:
         fig.savefig(figname)
 
-    plt.show()
+    return fig, ax
